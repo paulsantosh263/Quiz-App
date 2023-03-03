@@ -1,0 +1,103 @@
+body{
+    margin: 0px;
+}
+.main_body{
+    background-color: rgb(102, 102, 236);
+    height: calc(100vh - 88px);
+}
+#top{
+    background-color: black;
+    padding: 20px;
+}
+a{
+    text-decoration: none;
+    color: white;
+    margin-right: 10%;
+}
+.navBar{
+    display: flex;
+    justify-content: space-between;
+}
+.start_quiz{
+    background-color: crimson;
+    color: white;
+    margin: auto;
+    display: block;
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.start_quiz:hover{
+    background-color: rgb(1, 59, 134);
+}
+#top+div{
+    padding: 15px;
+}
+.login-page{
+    background-color: rgb(102, 102, 236);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 88px);
+}
+.login>div{
+    color: blue;
+    font-size: 25px;
+}
+.login input{
+    width: 250px;
+    height: 30px;
+    margin-top: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid white;
+}
+.login button{
+    background-color: crimson;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid crimson;
+    margin-top: 10px;
+}
+.login button:hover{
+    background-color: blue;
+    border: 1px solid blue;
+}
+#start{
+    display: flex;
+    justify-content: center;
+    color: rgb(20, 34, 233);
+    font-weight: bold;
+    margin-top: 10px;
+}
+.handle_icon{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.final_result{
+    width: 40vw;
+    background-color: white;
+    padding: 1.6rem 5rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.8rem 0.8rem -0.5rem rgba(0,0,0,0.4);
+}
+.instruction{
+    padding: 0.5rem 1.5rem;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 400;
+    display: block;
+    margin: auto;
+    border: none;
+    text-transform: uppercase;
+    color: white;
+    background-color: rgb(102, 102, 236);
+    margin-top: 2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 40vw;
+}

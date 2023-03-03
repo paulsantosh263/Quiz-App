@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <div id="top"> </div>
+    <div class="login-page">
+        <div class="login">
+            <!-- login page -->
+            <div>Login</div>
+            <div>
+                <form action="">
+                    <div>
+                        <input id="email" type="email" placeholder="Enter your mail">
+                    </div>
+                    <div>
+                        <input id="password" type="password" placeholder="Enter your password">
+                    </div>
+                </form>
+            </div>
+            <div>
+                <button onclick="handle_login()">Login</button>
+            </div>
+            <!-- show the message regrading login -->
+            <div id="message">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    // handle login function
+    const handle_login=()=>{
+        const email=document.getElementById("email").value;
+        const password=document.getElementById("password").value;
+        const message=document.getElementById("message");
+        const data=JSON.parse(localStorage.getItem("UserInfo"))
+        let check=0;
+        let name;
+        // checking validation
+        if(email.length==0 || password.length==0){
+            message.innerText='Invalid Input';
+            return;
+        }
+        if(data==undefined || data.length==0){
+            message.innerText='Account not exist';
+            return;
+        }
+        for(let i=0;i<data.length;i++){
+          if(data[i].email==email && data[i].password==password){
+            check=1;
+            name=data[i].name;
+            break;
+          }  
+        }
+        if(check==1){
+            localStorage.setItem("login",JSON.stringify({status:1,name}))
+            message.innerText='Login success'
+            window.location.href = "./index.html"
+        }
+        else{
+            message.innerText='Account not exist'
+        }
+    }
+</script>
+
+<!-- navbar componenet -->
+<script type="module">
+    import navbar from "./component/navbar.js";
+    document.getElementById("top").innerHTML=navbar('signUp');
+</script>
